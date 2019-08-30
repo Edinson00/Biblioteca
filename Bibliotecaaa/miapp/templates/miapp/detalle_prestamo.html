@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block principal %}
+
+<h2>Detalle de prestamo</h2>
+
+<p>Fecha de prestamo: {{ object.fechaprestamo }}</p>
+<p>Nombre del cliente: {{ object.nombre_cliente }}</p>
+<p>Telefono: {{ object.telefono }}</p>
+<p>Estado: {{ object.estado }}</p>
+
+<a href="{% url 'prestamo_libros' %}"><button type="button">Regresar</button></a>
+{% endblock  %}

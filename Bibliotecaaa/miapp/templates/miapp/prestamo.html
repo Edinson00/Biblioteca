@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block principal %}
+<h2>Listado de ejemplares</h2>
+
+<table>
+    <tr>
+        <th>Fecha de prestamo</th>
+        <th>Nombre del cliente </th>
+        <th>Telefono</th>
+        <th>Estado</th>
+        <th>Editar</th>
+        <th>Borrar</th>
+    </tr>
+    {% for libro in object_list  %}
+    <tr>
+        <td><a href="{% url 'detalle_prestamo' libro.pk %}">{{ libro.fechaprestamo }}</a></a></td>
+        <td>{{libro.nombre_cliente }}</a></td>
+        <td>{{libro.telefono}}</td>
+        <td>{{libro.estado}}</td>
+        <td><a href="{% url 'editar_prestamo' libro.id %}">Editar</a></td>
+        <td><a href="{% url 'borrar_prestamo' libro.id %}">Borrar</a></td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+
+<a href="{% url 'nuevo_prestamo' %}">Nuevo prestamo</a>
+{% endblock %}

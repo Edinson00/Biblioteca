@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block principal %}
+
+<h2>Detalle de libro</h2>
+
+<p>Numero de ejemplares: {{ object.numeroejemplar }}</p>
+<p>Fecha de prestamo: {{ object.fechadecompra }}</p>
+<p>Libro: {{ object.libro}}</p>
+
+<a href="{% url 'ejemplar_libro' %}"><button type="button">Regresar</button></a>
+{% endblock  %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block principal %}
+
+<p>¿ Esta seguro de eliminar el prestamo de:  {{ object.nombre_cliente }} ?</p>
+<form action="#" method="post">
+    {% csrf_token %}
+    <button type="submit">Eliminar</button>
+</form>
+
+<a href="{% url 'prestamo_libros' %}">Cancelar</a>
+
+{% endblock  %}
